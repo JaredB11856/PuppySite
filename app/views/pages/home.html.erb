@@ -1,4 +1,6 @@
 <%= render '/shared/application_nav' %>
 
-<h2>Mother</h2>
+<%= image_tag @mothers.main_image  unless  @mothers.main_image.nil?  %>
+<h2><%= @mothers.about %></h2>
+
 <%= render '/shared/application_footer' %>
