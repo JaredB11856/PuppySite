@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_puppy_path(@puppy) %> |
+<%= link_to 'Back', puppies_path %>
+
+<%= @puppies.first.about %>
+<%= image_tag @puppies.first.image_one unless @puppies.first.image_one.nil?  %>
