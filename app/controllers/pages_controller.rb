@@ -1,11 +1,11 @@
 class PagesController < ApplicationController 
 
   def home
-    @mothers = Mother.first
+    @puppy = Puppy.first
   end
 
   def our_dogs
-    @mothers = Mother.first
+    @mother = Mother.first
   end
 
 end
