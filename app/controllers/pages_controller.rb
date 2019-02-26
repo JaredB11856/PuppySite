@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def our_dogs
-    @mother = Mother.first
+    @mothers = Mother.all
   end
 
 end

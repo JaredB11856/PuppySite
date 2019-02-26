@@ -2,3 +2,10 @@
 
 <%= link_to 'Edit', edit_mother_path(@mother) %> |
 <%= link_to 'Back', mothers_path %>
+
+
+<%= @mother.name %>
+<%= image_tag @mother.main_image unless  @mother.main_image.nil?  %>
+<br>
+<%= @mother.about %>
+<hr>
