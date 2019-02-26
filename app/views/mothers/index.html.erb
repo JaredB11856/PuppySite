@@ -12,6 +12,7 @@
   <tbody>
     <% @mothers.each do |mother| %>
       <tr>
+        <td><%= mother.name %></td>
         <td><%= link_to 'Show', mother %></td>
         <td><%= link_to 'Edit', edit_mother_path(mother) %></td>
         <td><%= link_to 'Destroy', mother, method: :delete, data: { confirm: 'Are you sure?' } %></td>

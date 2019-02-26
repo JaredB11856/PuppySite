@@ -69,6 +69,6 @@ class MothersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mother_params
-      params.fetch(:mother, {})
+      params.require(:mother).permit(:name, :about, :main_image, :image_one, :image_two)
     end
 end
