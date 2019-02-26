@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @litter.date %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @litter.about %>
+</p>
+
+<p>
+  <strong>Main image:</strong>
+  <%= @litter.main_image %>
+</p>
+
+<p>
+  <strong>Image one:</strong>
+  <%= @litter.image_one %>
+</p>
+
+<p>
+  <strong>Image two:</strong>
+  <%= @litter.image_two %>
+</p>
+
+<%= link_to 'Edit', edit_litter_path(@litter) %> |
+<%= link_to 'Back', litters_path %>
