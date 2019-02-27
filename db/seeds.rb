@@ -15,7 +15,8 @@ puts '1 Litter created'
 Puppy.create!(
     about: "This is our littlest puppy. He's such a fiesty ",
     image_one: "https://www.freepngimg.com/thumb/puppy/33435-9-siberian-husky-puppy-photos.png",
-    id: 1
+    id: 1,
+    litter_id: 1
   )
 
 puts '1 Puppy created'

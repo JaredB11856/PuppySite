@@ -25,5 +25,13 @@
   <%= @litter.image_two %>
 </p>
 
+<hr>
+<% @litter.puppies.each do |puppy| %>
+  <hr>
+  <%= link_to (image_tag puppy.image_one), puppy_path %>
+  <%= puppy.about %>
+  <% end%>
+<hr>
+
 <%= link_to 'Edit', edit_litter_path(@litter) %> |
 <%= link_to 'Back', litters_path %>
