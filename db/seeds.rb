@@ -7,7 +7,7 @@ puts '1 Mother created'
 
 Litter.create!(
     about: "This is our littlest Litter",
-    main_image: "https://www.freepngimg.com/thumb/puppy/33435-9-siberian-husky-puppy-photos.png",
+    main_image: "https://www.freepngimg.com/thumb/dog/15-dog-png-image-picture-download-dogs.png",
     mother_id: 1
   )
 puts '1 Litter created'

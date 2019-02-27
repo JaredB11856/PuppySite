@@ -9,6 +9,7 @@
 <br>
 <% @mother.litters.each do |litter| %>
   <hr>
+  <%= link_to (image_tag litter.main_image), litter_path %>
   <%= litter.about %>
   <% end%>
 <hr>
