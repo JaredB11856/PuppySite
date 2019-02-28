@@ -1,7 +1,7 @@
 class PagesController < ApplicationController 
 
   def home
-    @puppy = Puppy.first
+    @puppies = Puppy.all
   end
 
   def our_dogs
