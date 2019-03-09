@@ -1,7 +1,15 @@
+
 <%= render '/shared/application_nav' %>
 
-<% @puppies.each do |puppy| %>
-  <%= link_to (image_tag puppy.image_one), puppy_path(puppy.id) %>
-<% end %>
+  <% @puppies.each do |puppy| %>
+  <div class="row">
+    <div class="col-md-4 ">
+      <%= link_to (image_tag puppy.image_one), puppy_path(puppy.id) %>
+    </div>
+    <div class="col-md-8 ">
+      <p><%= puppy.about %></p>
+    </div>
+  </div>
+  <% end %>
 
 <%= render '/shared/application_footer' %>
