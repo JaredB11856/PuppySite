@@ -1,37 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @litter.date %>
-</p>
-
-<p>
-  <strong>About:</strong>
-  <%= @litter.about %>
-</p>
-
-<p>
-  <strong>Main image:</strong>
-  <%= image_tag @litter.main_image %>
-</p>
-
-<p>
-  <strong>Image one:</strong>
-  <%= @litter.image_one %>
-</p>
-
-<p>
-  <strong>Image two:</strong>
-  <%= @litter.image_two %>
-</p>
+<div class="row">
+  <div class="col-md-4 image">
+    <%= image_tag @litter.main_image, class:'image'%>
+  </div>
+  <div class="col-md-8 about">
+    <p><%= @litter.about %></p>
+  </div>
+</div>
 
 <hr>
 <% @litter.puppies.each do |puppy| %>
-  <hr>
-  <%= link_to (image_tag puppy.image_one), puppy_path %>
-  <%= puppy.about %>
-  <% end%>
-<hr>
+  <div class="row">
+    <div class="col-md-4 image">
+      <%= link_to (image_tag puppy.image_one, class:'image'), puppy_path(puppy.id) %>
+    </div>
+    <div class="col-md-8 about">
+      <p><%= puppy.about %></p>
+    </div>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_litter_path(@litter) %> |
 <%= link_to 'Back', litters_path %>

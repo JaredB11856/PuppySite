@@ -4,12 +4,15 @@
 <%= link_to 'Back', mothers_path %>
 
 
-<%= @mother.name %>
-<%= image_tag @mother.main_image unless  @mother.main_image.nil?  %>
-<br>
+
+
 <% @mother.litters.each do |litter| %>
-  <hr>
-  <%= link_to (image_tag litter.main_image), litter_path %>
-  <%= litter.about %>
-  <% end%>
-<hr>
+  <div class="row">
+    <div class="col-md-4 image">
+      <%= link_to (image_tag litter.main_image, class:'image'), litter_path(litter.id) %>
+    </div>
+    <div class="col-md-8 about">
+      <p><%= litter.about %></p>
+    </div>
+  </div>
+<% end %>
