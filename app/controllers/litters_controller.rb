@@ -69,6 +69,6 @@ class LittersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def litter_params
-      params.require(:litter).permit(:date, :about, :main_image, :image_one, :image_two)
+      params.require(:litter).permit(:date, :about, :main_image, :image_one, :image_two, :mother_id)
     end
 end

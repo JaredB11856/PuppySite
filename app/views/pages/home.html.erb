@@ -1,17 +1,14 @@
-<%= render '/shared/application_nav' %>
-  <% @puppies.each do |puppy| %>
-    <div class="row">
-      <div class="col-md-1 image">
-      </div>
-      <div class="col-md-4 image">
-        <%= link_to (image_tag puppy.image_one, class:'image'), puppy_path(puppy.id) %>
-      </div>
-      <div class="col-md-5 about">
-        <p><%= puppy.about %></p>
-      </div>
-      <div class="col-md-2 image">
-      </div>
+<% @puppies.each do |puppy| %>
+  <div class="row">
+    <div class="col-md-1 image">
     </div>
-  <% end %>
-
-<%= render '/shared/application_footer' %>
+    <div class="col-md-4 image">
+      <%= link_to (image_tag puppy.image_one, class:'image'), puppy_path(puppy.id) %>
+    </div>
+    <div class="col-md-5 about">
+      <p><%= puppy.about %></p>
+    </div>
+    <div class="col-md-2 image">
+    </div>
+  </div>
+<% end %>

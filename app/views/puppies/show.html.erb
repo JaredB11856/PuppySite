@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-
-  <div class="row">
-    <div class="col-md-4 image">
-      <%= image_tag @puppy.image_one, class:'image'%>
-    </div>
-    <div class="col-md-8 about">
-      <p><%= @puppy.about %></p>
-    </div>
+<%= link_to 'Edit Puppy', edit_puppy_path(@puppy) %>
+<div class="row">
+  <div class="col-md-4 image">
+    <%= image_tag @puppy.image_one, class:'image'%>
   </div>
+  <div class="col-md-8 about">
+    <p><%= @puppy.about %></p>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_puppy_path(@puppy) %> |
-<%= link_to 'Back', puppies_path %>

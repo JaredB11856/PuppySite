@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_mother_path(@mother) %> |
-<%= link_to 'Back', mothers_path %>
+<%= link_to 'Edit Mother', edit_mother_path(@mother) %>
+<br>
+<%= link_to 'New Litter', new_litter_path %>
 
-
+<div class="row">
+  <div class="col-md-4 image">
+    <%= image_tag @mother.main_image, class:'image'%>
+  </div>
+  <div class="col-md-8 about">
+    <p><%= @mother.about %></p>
+  </div>
+</div>
 
 
 <% @mother.litters.each do |litter| %>
