@@ -14,8 +14,8 @@ class PuppiesController < ApplicationController
   end
 
   # GET /puppies/new
-  def new
-    @puppy = Puppy.new
+  def new    
+    @puppy = Puppy.new(litter_id: params[:litter_id])
   end
 
   # GET /puppies/1/edit

@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<hr>
+<%= @mother.inspect %>
+<hr>
 <%= link_to 'Edit Litter', edit_litter_path(@litter) %>
 <br>
-<%= link_to 'New Puppy', new_puppy_path %>
+<%= link_to 'New Puppy', new_puppy_path(litter_id: @litter) %>
 <div class="row">
   <div class="col-md-4 image">
     <%= image_tag @litter.main_image, class:'image'%>

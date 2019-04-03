@@ -13,8 +13,8 @@ class LittersController < ApplicationController
   end
 
   # GET /litters/new
-  def new
-    @litter = Litter.new
+  def new    
+    @litter = Litter.new(mother_id: params[:mother_id])
   end
 
   # GET /litters/1/edit
