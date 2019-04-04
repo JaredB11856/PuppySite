@@ -3,7 +3,7 @@
 <%= link_to 'Edit Puppy', edit_puppy_path(@puppy) %>
 <div class="row">
   <div class="col-md-4 image">
-    <%= image_tag @puppy.image_one, class:'image'%>
+    <%= image_tag @puppy.main_image, class:'image'%>
   </div>
   <div class="col-md-8 about">
     <p><%= @puppy.about %></p>
