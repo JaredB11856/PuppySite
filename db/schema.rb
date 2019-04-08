@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_134245) do
+ActiveRecord::Schema.define(version: 2019_04_05_133641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,9 @@ ActiveRecord::Schema.define(version: 2019_04_04_134245) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "mother_id"
+    t.string "slug"
     t.index ["mother_id"], name: "index_litters_on_mother_id"
+    t.index ["slug"], name: "index_litters_on_slug", unique: true
   end
 
   create_table "mothers", force: :cascade do |t|
@@ -60,7 +62,9 @@ ActiveRecord::Schema.define(version: 2019_04_04_134245) do
     t.datetime "updated_at", null: false
     t.bigint "litter_id"
     t.text "main_image"
+    t.string "slug"
     t.index ["litter_id"], name: "index_puppies_on_litter_id"
+    t.index ["slug"], name: "index_puppies_on_slug", unique: true
   end
 
   add_foreign_key "litters", "mothers"

@@ -16,7 +16,7 @@
 <% @mother.litters.each do |litter| %>
   <div class="row">
     <div class="col-md-4 image">
-      <%= link_to (image_tag litter.main_image, class:'image'), litter_path(litter.id) %>
+      <%= link_to (image_tag litter.main_image, class:'image'), litter_path(litter.slug) %>
     </div>
     <div class="col-md-8 about">
       <p><%= litter.about %></p>
