@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'Edit Mother', edit_mother_path(@mother) %>
 <br>
-<%= link_to 'New Litter', new_litter_path(mother_id: @mother) %>
+<%= link_to 'New Litter', new_litter_path(mother_name: @mother.name) %>
 
 <div class="row">
   <div class="col-md-4 image">

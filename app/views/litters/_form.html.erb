@@ -1,3 +1,7 @@
+<%= params[:mother_name] %>
+<hr>
+<%= @mother.inspect %>
+<hr>
 <%= form_with(model: litter, local: true) do |form| %>
   <% if litter.errors.any? %>
     <div id="error_explanation">
@@ -9,12 +13,9 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %>  
 
-  <div class="field">
-    <%= form.label :mother %>
-    <%= form.text_field :mother_id %>
-  </div>
+  <%= form.hidden_field :mother_id, value: litter.mother_id %>  
 
   <div class="field">
     <%= form.label :date %>
