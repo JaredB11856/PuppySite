@@ -14,14 +14,13 @@ class LittersController < ApplicationController
 
   # GET /litters/new
   def new   
-
     @mother = Mother.find_by_name(params[:mother_name])  
-     @litter = Litter.new
+    @litter = Litter.new
+    
     if @mother != nil
       @litter.mother_id = @mother.id      
     else
-    puts "@mother = nil"
-    redirect_to root_path, notice: 'To add a new litter please navigate to Our dogs, the mother you are looking for and use the new litter feature.'
+    redirect_to root_path, notice: 'To add a new litter please navigate to Our dogs, the mother you wish to add a new litter for and use the new litter feature.'
     end
   end
 
@@ -32,7 +31,6 @@ class LittersController < ApplicationController
   # POST /litters
   # POST /litters.json
   def create        
-    @mother = Mother.find_by_name(params[:mother_name])
     @litter = Litter.new(litter_params)
     respond_to do |format|
       if @litter.save

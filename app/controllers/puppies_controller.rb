@@ -15,7 +15,15 @@ class PuppiesController < ApplicationController
 
   # GET /puppies/new
   def new    
-    @puppy = Puppy.new(litter_id: params[:litter_id])
+    @mother = Mother.find(params[:mother_id])  
+    @litter = Litter.find_by_date(params[:litter_date]) && Litter.find_by_mother_id(params[:mother_id])  
+    @puppy = Puppy.new
+
+    if @litter != nil
+      @puppy.litter_id = @litter.id      
+    else
+    redirect_to root_path, notice: 'To add a new litter please navigate to Our dogs, the mother you wish to add a new puppy for, select the litter and use the new puppy feature.'
+    end
   end
 
   # GET /puppies/1/edit
@@ -26,7 +34,6 @@ class PuppiesController < ApplicationController
   # POST /puppies.json
   def create
     @puppy = Puppy.new(puppy_params)
-
     respond_to do |format|
       if @puppy.save
         format.html { redirect_to @puppy, notice: 'Puppy was successfully created.' }

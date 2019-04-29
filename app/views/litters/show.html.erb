@@ -4,7 +4,7 @@
 <hr>
 <%= link_to 'Edit Litter', edit_litter_path(@litter) %>
 <br>
-<%= link_to 'New Puppy', new_puppy_path(slug: @litter) %>
+<%= link_to 'New Puppy', new_puppy_path(mother_id: @litter.mother_id, litter_date: @litter.date) %>
 <div class="row">
   <div class="col-md-4 image">
     <%= image_tag @litter.main_image, class:'image'%>

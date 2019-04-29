@@ -11,12 +11,7 @@
     </div>
   <% end %>
 
-  <div class="actions">
-
-  <div class="field">
-    <%= form.label :litter %>
-    <%= form.text_field :litter_id %>
-  </div>
+  <%= form.hidden_field :litter_id, value: puppy.litter_id %> 
 
   <div class="field">
     <%= form.label :name %>
