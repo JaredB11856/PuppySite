@@ -57,4 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'friendly_id', '~> 5.2', '>= 5.2.5'
+gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
