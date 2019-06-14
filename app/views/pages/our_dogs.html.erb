@@ -1,4 +1,4 @@
-<%= link_to 'New Mother', new_mother_path %>
+<%= link_to 'New Mother', new_mother_path if logged_in?(:admin) %>
 <% @mothers.each do |mother| %>
   <div class="row">
     <div class="col-md-4 image">

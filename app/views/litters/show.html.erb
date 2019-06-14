@@ -2,9 +2,9 @@
 <hr>
 <%= @mother.inspect %>
 <hr>
-<%= link_to 'Edit Litter', edit_litter_path(@litter) %>
+<%= link_to 'Edit Litter', edit_litter_path(@litter) if logged_in?(:admin) %>
 <br>
-<%= link_to 'New Puppy', new_puppy_path(mother_id: @litter.mother_id, litter_date: @litter.date) %>
+<%= link_to 'New Puppy', new_puppy_path(mother_id: @litter.mother_id, litter_date: @litter.date) if logged_in?(:admin) %>
 <div class="row">
   <div class="col-md-4 image">
     <%= image_tag @litter.main_image, class:'image'%>

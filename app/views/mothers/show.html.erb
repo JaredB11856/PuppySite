@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'Edit Mother', edit_mother_path(@mother) %>
+<%= link_to 'Edit Mother', edit_mother_path(@mother) if logged_in?(:admin) %>
 <br>
-<%= link_to 'New Litter', new_litter_path(mother_name: @mother.name) %>
+<%= link_to 'New Litter', new_litter_path(mother_name: @mother.name) if logged_in?(:admin) %>
 
 <div class="row">
   <div class="col-md-4 image">

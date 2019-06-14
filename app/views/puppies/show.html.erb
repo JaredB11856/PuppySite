@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit Puppy', edit_puppy_path(@puppy) %>
+<%= link_to 'Edit Puppy', edit_puppy_path(@puppy) if logged_in?(:admin) %>
 <div class="row">
   <div class="col-md-4 image">
     <%= image_tag @puppy.main_image, class:'image'%>
