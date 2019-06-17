@@ -1,5 +1,6 @@
 class PuppiesController < ApplicationController
-  before_action :set_puppy, only: [:show, :edit, :update, :destroy]
+  before_action :set_puppy, only: [:show, :edit, :update, :destroy]   
+  access all: [:show], admin: :all
 
   # GET /puppies
   # GET /puppies.json

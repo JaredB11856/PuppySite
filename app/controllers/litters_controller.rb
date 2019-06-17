@@ -1,5 +1,6 @@
 class LittersController < ApplicationController
   before_action :set_litter, only: [:show, :edit, :update, :destroy]
+  access all: [:show], admin: :all
 
   # GET /litters
   # GET /litters.json

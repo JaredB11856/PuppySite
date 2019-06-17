@@ -1,5 +1,6 @@
 class MothersController < ApplicationController
   before_action :set_mother, only: [:show, :edit, :update, :destroy]
+  access all: [:show], admin: :all
 
   # GET /mothers
   # GET /mothers.json
