@@ -23,9 +23,10 @@
     <%= form.text_area :about %>
   </div>
 
-  <div class="field">
-    <%= form.label :main_image %>
-    <%= form.text_area :main_image %>
+  <div class="form-group">
+    <%= form.file_field :main_image %>
+    <%= form.file_field :image_one %>
+    <%= form.file_field :image_two %>
   </div>
 
   <div class="field">

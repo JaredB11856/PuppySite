@@ -3,4 +3,8 @@ class Litter < ApplicationRecord
   has_many :puppies
  extend FriendlyId
   friendly_id :date, use: :slugged
+
+  mount_uploader :main_image, ImageUploader
+  mount_uploader :image_one, ImageUploader
+  mount_uploader :image_two, ImageUploader
 end

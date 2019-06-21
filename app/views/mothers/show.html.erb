@@ -5,7 +5,9 @@
 
 <div class="row">
   <div class="col-md-4 image">
-    <%= image_tag @mother.main_image, class:'image'%>
+    <%= image_tag @mother.main_image.url, class:'image' unless @mother.main_image.url.nil? %>
+    <%= image_tag @mother.image_one.url, class:'image' unless @mother.image_one.url.nil? %>
+    <%= image_tag @mother.image_two.url, class:'image' unless @mother.image_two.url.nil? %>
   </div>
   <div class="col-md-8 about">
     <p><%= @mother.about %></p>
@@ -16,7 +18,7 @@
 <% @mother.litters.each do |litter| %>
   <div class="row">
     <div class="col-md-4 image">
-      <%= link_to (image_tag litter.main_image, class:'image'), litter_path(litter.slug) %>
+      <%= link_to (image_tag litter.main_image.url, class:'image'), litter_path(litter.slug) unless @mother.main_image.url.nil? %>
     </div>
     <div class="col-md-8 about">
       <p><%= litter.about %></p>

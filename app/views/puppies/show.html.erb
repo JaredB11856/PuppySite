@@ -3,7 +3,12 @@
 <%= link_to 'Edit Puppy', edit_puppy_path(@puppy) if logged_in?(:admin) %>
 <div class="row">
   <div class="col-md-4 image">
-    <%= image_tag @puppy.main_image, class:'image'%>
+    <%= @puppy.main_image.inspect %>
+    <hr>
+    <%= @puppy.main_image.url.inspect %>
+    <%= image_tag @puppy.main_image.url unless @puppy.main_image.url.nil? %>
+    <%= image_tag @puppy.image_one.url unless @puppy.image_one.url.nil? %>
+    <%= image_tag @puppy.image_two.url unless @puppy.image_two.url.nil? %>
   </div>
   <div class="col-md-8 about">
     <p><%= @puppy.about %></p>

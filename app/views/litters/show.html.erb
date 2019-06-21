@@ -7,7 +7,7 @@
 <%= link_to 'New Puppy', new_puppy_path(mother_id: @litter.mother_id, litter_date: @litter.date) if logged_in?(:admin) %>
 <div class="row">
   <div class="col-md-4 image">
-    <%= image_tag @litter.main_image, class:'image'%>
+    <%= image_tag @litter.main_image.url, class:'image' unless @litter.main_image.url.nil? %>
   </div>
   <div class="col-md-8 about">
     <p><%= @litter.about %></p>
@@ -18,7 +18,7 @@
 <% @litter.puppies.each do |puppy| %>
   <div class="row">
     <div class="col-md-4 image">
-      <%= link_to (image_tag puppy.main_image, class:'image'), puppy_path(puppy.slug) %>
+      <%= link_to (image_tag puppy.main_image.url, class:'image'), puppy_path(puppy.slug) unless puppy.main_image.url.nil? %>
     </div>
     <div class="col-md-8 about">
       <p><%= puppy.about %></p>
