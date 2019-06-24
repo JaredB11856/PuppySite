@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
-<%= link_to 'Edit Mother', edit_mother_path(@mother) if logged_in?(:admin) %>
-<br>
-<%= link_to 'New Litter', new_litter_path(mother_name: @mother.name) if logged_in?(:admin) %>
+<div class="visitor-background">
+  <p id="notice"><%= notice %></p>
+  <%= link_to 'Edit Mother', edit_mother_path(@mother) if logged_in?(:admin) %>
+  <br>
+  <%= link_to 'New Litter', new_litter_path(mother_name: @mother.name) if logged_in?(:admin) %>
 
-<div class="row">
-  <div class="col-md-4 image">
-    <%= image_tag @mother.main_image.url, class:'image' unless @mother.main_image.url.nil? %>
-  </div>
-  <div class="col-md-8 about">
-    <p><%= @mother.about %></p>
-  </div>
-</div>
-
-<% @mother.litters.each do |litter| %>
   <div class="row">
     <div class="col-md-4 image">
-      <%= link_to (image_tag litter.main_image.url, class:'image'), litter_path(litter.slug) unless @mother.main_image.url.nil? %>
+      <%= image_tag @mother.main_image.url, class:'image' unless @mother.main_image.url.nil? %>
     </div>
     <div class="col-md-8 about">
-      <p><%= litter.about %></p>
+      <p><%= @mother.about %></p>
     </div>
   </div>
-<% end %>
+
+  <% @mother.litters.each do |litter| %>
+    <div class="row">
+      <div class="col-md-4 image">
+        <%= link_to (image_tag litter.main_image.url, class:'image'), litter_path(litter.slug) unless @mother.main_image.url.nil? %>
+      </div>
+      <div class="col-md-8 about">
+        <p><%= litter.about %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

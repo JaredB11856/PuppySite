@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<div class="visitor-background">
+  <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit Puppy', edit_puppy_path(@puppy) if logged_in?(:admin) %>
-<%= render 'shared/puppy', puppy: @puppy %>
+  <%= link_to 'Edit Puppy', edit_puppy_path(@puppy) if logged_in?(:admin) %>
+  <%= render 'shared/puppy', puppy: @puppy %>
+</div>

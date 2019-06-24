@@ -1,4 +1,13 @@
-<%= link_to 'New Mother', new_mother_path if logged_in?(:admin) %>
-<% @mothers.each do |mother| %>  
-  <%= render 'shared/mother', mother: mother %>
-<% end %>
+<div class="visitor-background">
+  <%= link_to 'New Mother', new_mother_path if logged_in?(:admin) %>
+  <% @mothers.each do |mother| %>
+    <div class="row">
+      <div class="col-md-4 image">
+        <%= link_to (image_tag mother.main_image.url , class:'image'), mother_path(mother.slug) unless mother.main_image.url.nil? %>
+      </div>
+      <div class="col-md-8 about">
+        <p><%= mother.about %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

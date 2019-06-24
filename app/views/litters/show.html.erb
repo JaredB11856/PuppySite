@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
-<hr>
-<%= @mother.inspect %>
-<hr>
-<%= link_to 'Edit Litter', edit_litter_path(@litter) if logged_in?(:admin) %>
-<br>
-<%= link_to 'New Puppy', new_puppy_path(mother_id: @litter.mother_id, litter_date: @litter.date) if logged_in?(:admin) %>
-
-<%= image_tag @litter.main_image.url, class:'image' unless @litter.main_image.url.nil? %>
-<hr>
-<% @litter.puppies.each do |puppy| %>
-  <div class="row">
-    <div class="col-md-4 image">
-      <%= link_to (image_tag puppy.main_image.url, class:'image'), puppy_path(puppy.slug) unless puppy.main_image.url.nil? %>
+<div class="visitor-background">
+  <p id="notice"><%= notice %></p>
+  <hr>
+  <%= @mother.inspect %>
+  <hr>
+  <%= link_to 'Edit Litter', edit_litter_path(@litter) if logged_in?(:admin) %>
+  <br>
+  <%= link_to 'New Puppy', new_puppy_path(mother_id: @litter.mother_id, litter_date: @litter.date) if logged_in?(:admin) %>
+  <br>
+  <%= image_tag @litter.main_image.url, class:'image' unless @litter.main_image.url.nil? %>
+  <hr>
+  <% @litter.puppies.each do |puppy| %>
+    <div class="row">
+      <div class="col-md-4 image">
+        <%= link_to (image_tag puppy.main_image.url, class:'image'), puppy_path(puppy.slug) unless puppy.main_image.url.nil? %>
+      </div>
+      <div class="col-md-8 about">
+        <p><%= puppy.about %></p>
+      </div>
     </div>
-    <div class="col-md-8 about">
-      <p><%= puppy.about %></p>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
