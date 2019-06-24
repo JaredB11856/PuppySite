@@ -1,14 +1,3 @@
 <% @puppies.each do |puppy| %>
-  <div class="row">
-    <div class="col-md-1 image">
-    </div>
-    <div class="col-md-4 image">
-      <%= link_to (image_tag puppy.main_image.url, class:'image'), puppy_path(puppy.id) unless puppy.main_image.url.nil? %>
-    </div>
-    <div class="col-md-5 about">
-      <p><%= puppy.about %></p>
-    </div>
-    <div class="col-md-2 image">
-    </div>
-  </div>
+  <%= render 'shared/puppy', puppy: puppy %>
 <% end %>
